@@ -1,0 +1,51 @@
+{% extends 'library_crud/menubar.html' %}
+
+{% block content %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Attribute</th>
+        <th scope="col">value</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Name</th>
+        <td>{{ library.name }}</td>
+        
+      </tr>
+      <tr>
+        <th>USN</th>
+        <td>{{ library.usn }}</td>
+        
+      </tr>
+      
+      <tr>
+        <th>Branch</th>
+        <td>{{ library.branch }}</td>
+        
+      </tr>
+      <tr>
+        <th>Bookname</th>
+        <td>{{ library.bookname }}</td>
+        
+      </tr>
+      <tr>
+        <th>Booknumber</th>
+        <td>{{ library.booknumber }}</td>
+        
+      </tr>
+      <tr>
+        <th>Authorname</th>
+        <td>{{ library.authorname }}</td>
+        
+      </tr>
+      <tr>
+        <th>Subject</th>
+        <td>{{ library.subject }}</td>
+        
+      </tr>
+    </tbody>
+  </table>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "library_crud/menubar.html" %}
+{% block content %}
+
+    <h2 class="mb-4">Library list</h2>
+   
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>usn</th>
+                <th>Branch</th>
+                <th>Bookname</th>
+                <th>Booknumber</th>
+                <th>Authorname</th>
+                <th>Subject</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for library in libraries %}
+            <tr>
+                <td>{{ library.name }}</td>
+                <td>{{ library.usn }}</td>
+                <td>{{ library.branch }}</td>
+                <td>{{ library.bookname }}</td>
+                <td>{{ library.booknumber }}</td>
+                <td>{{ library.authorname }}</td>
+                <td>{{ library.subject }}</td>
+                <td>
+                    <a href="{% url 'view_library' library.pk %}" class="btn btn-info btn-sm">View</a>
+                    <a href="{% url 'update_library' library.pk %}" class="btn btn-warning btn-sm">Edit</a>
+                    <a href="{% url 'delete_library' library.pk %}" class="btn btn-danger btn-sm">Delete</a>
+        library
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="7" class="text-center">No library found!</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
